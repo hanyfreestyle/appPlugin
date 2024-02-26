@@ -9,7 +9,7 @@ return
 	'continent_na' => 'أمريكا الشمالية',
 	'continent_oc' => 'استراليا',
 	'continent_sa' => 'أمريكا الجنوبية',
-	'menu' => 'الدول',
+	'app_menu' => 'الدول',
 	't_capital' => 'العاصمة',
 	't_continent' => 'القارة',
 	't_currency' => 'العملة',
