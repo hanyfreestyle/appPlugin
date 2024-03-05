@@ -27,7 +27,7 @@
                   <td>
                     @foreach($row->categories as $Category )
                       <a href="{{route($PrefixRoute.'.ListCategory',$Category->id)}}">
-                        <span class="cat_table_name">{{$Category->name}}</span>
+                        <span class="cat_table_name">{{ print_h1($Category)}}</span>
                       </a>
                     @endforeach
                   </td>

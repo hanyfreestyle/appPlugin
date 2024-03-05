@@ -3,6 +3,7 @@
 namespace App\AppPlugin\Product\Request;
 
 use App\Helpers\AdminHelper;
+use App\Http\Controllers\AdminMainController;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
@@ -37,18 +38,8 @@ class CategoryRequest extends FormRequest {
 //            'parent_id' => "required",
         ];
 
-        foreach ($addLang as $key => $lang) {
-            $rules[$key . ".name"] = 'required';
-            $rules[$key . ".des"] = 'required';
-            if($id == '0') {
-                $rules[$key . ".slug"] = 'required|unique:pro_category_translations,slug';
-            } else {
-                $rules[$key . ".slug"] = "required|unique:pro_category_translations,slug,$id,category_id,locale,$key";
-                $rules[$key.".g_des"] =   'required';
-                $rules[$key.".g_title"] =   'required';
-            }
-        }
 
+        $rules += AdminMainController::FormRequestSeo($id, $addLang, 'pro_category_translations','category_id');
         return $rules;
     }
 }
