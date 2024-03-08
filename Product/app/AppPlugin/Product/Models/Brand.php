@@ -53,7 +53,7 @@ class Brand extends Model implements TranslatableContract {
     }
 
     public function del_product() {
-        return $this->belongsTo(Product::class,'brand_id');
+        return $this->hasMany(Product::class,'brand_id');
     }
 
 
